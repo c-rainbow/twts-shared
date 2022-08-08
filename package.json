@@ -1,0 +1,10 @@
+{
+  "name": "twts-shared",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/c-rainbow/twts-shared.git",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^4.7.4"
+  }
+}
