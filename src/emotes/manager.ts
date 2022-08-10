@@ -3,20 +3,19 @@ import { Emote } from '../types/emotes';
 import { EmoteFetcher } from './fetcher';
 
 
-export class EmoteManager {
+export interface IEmoteManager {
+  getEmote(channelId: string, word: string): Promise<Emote | undefined>
+}
+
+export class EmoteManager implements IEmoteManager {
   private _fetcher: EmoteFetcher;
 
   // For now, use one repository for all sources of emotes. This design decision may change later.
   private _globalEmotes: Map<string, Emote>; // emote name to emote object.
   private _channelEmotes: Map<string, Map<string, Emote>>; // Numeric channel ID to emotes
 
-  constructor(fetcher: EmoteFetcher) {
-    if (fetcher) {
-      this._fetcher = fetcher;
-    }
-    else {
-      this._fetcher = new EmoteFetcher();
-    }
+  constructor(fetcher?: EmoteFetcher) {
+    this._fetcher = fetcher || new EmoteFetcher();
     this._globalEmotes = new Map<string, Emote>();
     this._channelEmotes = new Map<string, Map<string, Emote>>();
 

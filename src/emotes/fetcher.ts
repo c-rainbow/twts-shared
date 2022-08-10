@@ -2,6 +2,18 @@ import axios, { AxiosInstance } from 'axios';
 import { BttvEmote, FfzEmote, SevenTvEmote } from '../types/emotes';
 
 
+export interface IEmoteFetcher {
+  fetchBttvGlobalEmotes(): Promise<BttvEmote[]>;
+  fetchBttvEmotes(channelId: string): Promise<BttvEmote[]>;
+
+  fetchFfzGlobalEmotes(): Promise<FfzEmote[]>;
+  fetchFfzEmotes(channelId: string): Promise<FfzEmote[]>;
+
+  fetch7tvGlobalEmotes(): Promise<SevenTvEmote[]>;
+  fetch7tvEmotes(channelId: string): Promise<SevenTvEmote[]>;
+}
+
+
 interface BttvApiEmote {
   id: string;
   code: string;
@@ -79,7 +91,7 @@ function convertTo7tvEmote(apiEmote: SevenTvApiEmote): SevenTvEmote {
 }
 
 
-export class EmoteFetcher {
+export class EmoteFetcher implements IEmoteFetcher {
   private _client: AxiosInstance;
 
   constructor() {
