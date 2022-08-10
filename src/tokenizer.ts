@@ -1,7 +1,7 @@
-import { EmoteManager, IEmoteManager } from "../emotes/manager";
-import { TwitchEmoteTags } from "../types/emotes";
-import { ChatToken } from "../types/tokens";
-import { EmoteChecker } from '../emotes/checker';
+import { EmoteManager, IEmoteManager } from "./emotes/manager";
+import { TwitchEmoteTags } from "./types/emotes";
+import { ChatToken } from "./types/tokens";
+import { EmoteChecker } from './emotes/checker';
 
 
 const URL_EXPRESSION =
