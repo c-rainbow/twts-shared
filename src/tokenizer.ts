@@ -50,7 +50,7 @@ function flushBuffer(tokens: ChatToken[], buffer: string[]) {
 export class ChatTokenizer {
   private _emoteManager: IEmoteManager;
 
-  cosntructor(emoteManager?: IEmoteManager) {
+  constructor(emoteManager?: IEmoteManager) {
     this._emoteManager = emoteManager || new EmoteManager();
   }
 
