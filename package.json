@@ -1,6 +1,6 @@
 {
   "name": "@twtts/shared",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "bin/src/index.js",
   "repository": "https://github.com/c-rainbow/twts-shared.git",
   "license": "MIT",
