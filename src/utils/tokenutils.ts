@@ -11,12 +11,12 @@ export function isTranslatable(tokens: ChatToken[]): boolean {
 }
 
 
-export function getLanguage(tokens: ChatToken[]): string {
+export function getLanguage(tokens: ChatToken[]): string | undefined {
   for (const token of tokens) {
     // TODO: Find a "main" language
     if (token.type === 'text' && token.language) {
       return token.language;
     }
   }
-  return 'none';
+  return undefined;
 }

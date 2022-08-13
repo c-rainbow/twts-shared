@@ -38,7 +38,7 @@ export interface TranslateChatRequest {
 export interface TranslateChatResponse {
   original: ChatToken[]; // Tokens of the original chat message.
   translated?: ChatToken[]; // Translated chat message. Undefined if not translated
-  srcLang: string; // Source language
+  srcLang: string | undefined; // Source language
   destLang: string; // Target language
   displayName?: TranslateNameResponse; // Translated display name, if translated
 }
